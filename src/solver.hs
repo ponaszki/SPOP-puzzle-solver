@@ -1,8 +1,6 @@
 import System.Environment
 import System.IO
 
-module Main where
-
 main = do
 	putStrLn "Hello, Type in a path to file"  
 	let filename = "/home/ponaszki/workspace/haskell/SPOP-puzzle-solver/src/p1.txt"
@@ -18,7 +16,11 @@ main = do
 	secondLine <- hGetLine handle 
 	let rows = read firstLine::[[Int]]
 	let columns = read secondLine::[[Int]] 
+	let width = length columns
+	let height = length rows
 	--solve rows columns
-	putStrLn (firstLine)
-	putStrLn (secondLine)
+	putStrLn ("Rows: " ++ firstLine)
+	putStrLn ("Columns: " ++ secondLine)
+	putStrLn ("Width: " ++ (show width))
+	putStrLn ("Height: " ++ (show height))
 	
